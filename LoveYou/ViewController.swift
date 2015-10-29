@@ -20,7 +20,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Outlets
     
-    @IBOutlet weak var refreshButton: UIBarButtonItem!
+//    @IBOutlet weak var refreshButton: UIBarButtonItem!
     @IBOutlet weak var nameButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIButton!
     
@@ -37,6 +37,44 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     
     // MARK: Actions
+    @IBAction func userTappedScreen(sender: UITapGestureRecognizer) {
+        
+        if textFieldLabel.alpha == 0 {
+            heartButton.alpha = 0.5
+        }
+        UIView.animateWithDuration(NSTimeInterval(transitionTime/2), animations: { () -> Void in
+            self.textFieldLabel.alpha = 0
+            }) { (isComplete) -> Void in
+                if isComplete{
+                    UIView.animateWithDuration(NSTimeInterval(self.transitionTime)) { () -> Void in
+                        self.heartButton.alpha = 1
+                    }
+                    
+                }
+        }
+        if introView.alpha == 1 && nameTextField.editing == false{
+            introView.alpha = 0
+            //            refreshButton.enabled = true
+            
+            UIView.animateWithDuration(NSTimeInterval(0.2), animations: { () -> Void in
+                self.nameButton.title = "Name"
+            })
+            
+            heartButton.alpha = 0
+            UIView.animateWithDuration(NSTimeInterval(transitionTime*2), animations: { () -> Void in
+                self.heartButton.alpha = 1
+            })
+            
+            self.view.endEditing(true)
+
+        } else if introView.alpha == 1 && nameTextField.editing == true {
+            
+            self.view.endEditing(true)
+        
+        }
+        
+    }
+
     @IBAction func saveButtonTapped(sender: UIButton) {
         if nameTextField.text != "" {
             introView.alpha = 0
@@ -53,7 +91,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.heartButton.alpha = 1
             })
         }
-        refreshButton.enabled = true
+//        refreshButton.enabled = true
         nameButton.title = "Name"
         nameButton.enabled = true
     }
@@ -72,25 +110,27 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    @IBAction func refreshButtonTapped(sender: UIBarButtonItem) {
-        heartButton.alpha = 0.5
-        UIView.animateWithDuration(NSTimeInterval(transitionTime/2), animations: { () -> Void in
-            self.textFieldLabel.alpha = 0
-            }) { (isComplete) -> Void in
-                if isComplete{
-                    UIView.animateWithDuration(NSTimeInterval(self.transitionTime)) { () -> Void in
-                        self.heartButton.alpha = 1
-                    }
-
-                }
-        }
-    }
+//    @IBAction func refreshButtonTapped(sender: UIBarButtonItem) {
+//        if heartButton.alpha == 1 {
+//            heartButton.alpha = 0.5
+//        }
+//        UIView.animateWithDuration(NSTimeInterval(transitionTime/2), animations: { () -> Void in
+//            self.textFieldLabel.alpha = 0
+//            }) { (isComplete) -> Void in
+//                if isComplete{
+//                    UIView.animateWithDuration(NSTimeInterval(self.transitionTime)) { () -> Void in
+//                        self.heartButton.alpha = 1
+//                    }
+//
+//                }
+//        }
+//    }
     
     @IBAction func nameButtonTapped(sender: UIBarButtonItem) {
         if introView.alpha == 0 {
             // view not visible
             
-            refreshButton.enabled = false
+//            refreshButton.enabled = false
             saveButton.enabled = false
             
             UIView.animateWithDuration(NSTimeInterval(0.2), animations: { () -> Void in
@@ -110,7 +150,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             // view visible 
             
             introView.alpha = 0
-            refreshButton.enabled = true
+//            refreshButton.enabled = true
             
             UIView.animateWithDuration(NSTimeInterval(0.2), animations: { () -> Void in
                 self.nameButton.title = "Name"
@@ -120,6 +160,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
             UIView.animateWithDuration(NSTimeInterval(transitionTime*2), animations: { () -> Void in
                 self.heartButton.alpha = 1
             })
+
+            self.view.endEditing(true)
+
         }
         
         // disable save button
@@ -127,7 +170,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: Animation
-//    func fadeHeartButton(fadeIn: Bool) {
+//    func fadeHeartButton() {
 //        if fadeIn {
 //            
 //        } else {
@@ -139,9 +182,9 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: TextField Delegate Methods
     
-    func textFieldDidEndEditing(textField: UITextField) {
-        print("resignfirstresponder")
-    }
+//    func textFieldDidEndEditing(textField: UITextField) {
+//        print("resignfirstresponder")
+//    }
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return true
@@ -171,7 +214,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             })
             
         } else {
-            refreshButton.enabled = false
+//            refreshButton.enabled = false
             nameButton.enabled = false
             saveButton.enabled = false
 
@@ -182,7 +225,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+            
         nameTextField.addTarget(self, action: "checkIfTextWasEdited", forControlEvents: UIControlEvents.EditingChanged)
     }
 

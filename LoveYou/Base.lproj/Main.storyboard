@@ -34,7 +34,7 @@
                                 <rect key="frame" x="20" y="284" width="560" height="31"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F0Y-am-7Qx">
@@ -64,8 +64,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOB-O0-SBw">
-                                        <rect key="frame" x="263" y="197" width="34" height="30"/>
+                                        <rect key="frame" x="230" y="155" width="100" height="72"/>
                                         <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="9dN-5I-7Wi"/>
+                                            <constraint firstAttribute="height" constant="72" id="FNs-tc-Jbw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y3s-f1-1gB"/>
@@ -76,7 +81,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="ZRa-iJ-gIw" firstAttribute="centerX" secondItem="F0Y-am-7Qx" secondAttribute="centerX" id="04V-od-qZ5"/>
-                                    <constraint firstAttribute="bottom" secondItem="DOB-O0-SBw" secondAttribute="bottom" constant="8" id="3XG-OQ-IS7"/>
+                                    <constraint firstItem="DOB-O0-SBw" firstAttribute="centerX" secondItem="F0Y-am-7Qx" secondAttribute="centerX" id="2Pt-bb-Wgm"/>
+                                    <constraint firstItem="DOB-O0-SBw" firstAttribute="top" secondItem="W3Q-L6-lfm" secondAttribute="bottom" constant="22" id="4cP-4t-gW8"/>
                                     <constraint firstItem="W3Q-L6-lfm" firstAttribute="centerY" secondItem="F0Y-am-7Qx" secondAttribute="centerY" id="71D-IU-ckx"/>
                                     <constraint firstItem="W3Q-L6-lfm" firstAttribute="centerX" secondItem="F0Y-am-7Qx" secondAttribute="centerX" id="7a0-eK-FE7"/>
                                     <constraint firstItem="ZRa-iJ-gIw" firstAttribute="centerX" secondItem="F0Y-am-7Qx" secondAttribute="centerX" id="JBl-tV-twK"/>
@@ -88,7 +94,6 @@
                                     <constraint firstItem="ZRa-iJ-gIw" firstAttribute="centerY" secondItem="F0Y-am-7Qx" secondAttribute="centerY" id="UqI-d9-ekb"/>
                                     <constraint firstItem="W3Q-L6-lfm" firstAttribute="leading" secondItem="F0Y-am-7Qx" secondAttribute="leadingMargin" constant="8" id="eCU-da-Erf"/>
                                     <constraint firstItem="ZRa-iJ-gIw" firstAttribute="centerY" secondItem="F0Y-am-7Qx" secondAttribute="centerY" id="fRt-B4-8Di"/>
-                                    <constraint firstItem="DOB-O0-SBw" firstAttribute="centerX" secondItem="F0Y-am-7Qx" secondAttribute="centerX" id="hKb-jU-SIW"/>
                                     <constraint firstItem="ZRa-iJ-gIw" firstAttribute="centerX" secondItem="F0Y-am-7Qx" secondAttribute="centerX" id="mqs-5t-C81"/>
                                     <constraint firstAttribute="height" constant="235" id="xla-eU-cpb"/>
                                 </constraints>
@@ -116,16 +121,14 @@
                             <constraint firstItem="TYj-7t-S7s" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TBz-sU-fMu"/>
                             <constraint firstItem="F0Y-am-7Qx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sRs-tO-eO4"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="99y-fk-npF" appends="YES" id="itb-NP-0Te"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Love You" id="Bd6-Ik-4nX">
                         <barButtonItem key="leftBarButtonItem" title="Name" id="O5R-jl-DUF">
                             <connections>
                                 <action selector="nameButtonTapped:" destination="BYZ-38-t0r" id="o74-Fq-A72"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="UOT-xE-dPX">
-                            <connections>
-                                <action selector="refreshButtonTapped:" destination="BYZ-38-t0r" id="SRz-0u-huS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -134,12 +137,16 @@
                         <outlet property="introView" destination="F0Y-am-7Qx" id="gM9-HV-Fkz"/>
                         <outlet property="nameButton" destination="O5R-jl-DUF" id="GGo-wO-wnq"/>
                         <outlet property="nameTextField" destination="W3Q-L6-lfm" id="XYt-TQ-LQd"/>
-                        <outlet property="refreshButton" destination="UOT-xE-dPX" id="wTz-EF-wok"/>
                         <outlet property="saveButton" destination="DOB-O0-SBw" id="vPa-Y2-eo3"/>
                         <outlet property="textFieldLabel" destination="TYj-7t-S7s" id="Erc-Jt-Ckp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="99y-fk-npF">
+                    <connections>
+                        <action selector="userTappedScreen:" destination="BYZ-38-t0r" id="WUC-H8-Jzh"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1057" y="350"/>
         </scene>
