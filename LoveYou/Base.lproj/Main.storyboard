@@ -30,8 +30,8 @@
                                     <action selector="heartButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DdD-ES-vbd"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYj-7t-S7s">
-                                <rect key="frame" x="20" y="284" width="560" height="31"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TYj-7t-S7s">
+                                <rect key="frame" x="282" y="289" width="37" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -43,26 +43,12 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W3Q-L6-lfm">
                                         <rect key="frame" x="16" y="103" width="528" height="30"/>
                                         <animations/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="pyb-Yo-5Ly"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRa-iJ-gIw">
-                                        <rect key="frame" x="8" y="16" width="544" height="58"/>
-                                        <animations/>
-                                        <attributedString key="attributedText">
-                                            <fragment content="Type the name of the person who loves you:">
-                                                <attributes>
-                                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <font key="NSFont" size="38" name="GoudyOldStyleT-Regular"/>
-                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                                </attributes>
-                                            </fragment>
-                                        </attributedString>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOB-O0-SBw">
                                         <rect key="frame" x="230" y="155" width="100" height="72"/>
                                         <animations/>
@@ -70,12 +56,18 @@
                                             <constraint firstAttribute="width" constant="100" id="9dN-5I-7Wi"/>
                                             <constraint firstAttribute="height" constant="72" id="FNs-tc-Jbw"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <state key="normal" title="Save"/>
                                         <connections>
                                             <action selector="saveButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="y3s-f1-1gB"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Type the name of the person who loves you:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZRa-iJ-gIw">
+                                        <rect key="frame" x="8" y="45" width="544" height="27"/>
+                                        <animations/>
+                                        <fontDescription key="fontDescription" name="GoudyOldStyleT-Regular" family="Goudy Old Style" pointSize="19"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -85,7 +77,9 @@
                                     <constraint firstItem="DOB-O0-SBw" firstAttribute="top" secondItem="W3Q-L6-lfm" secondAttribute="bottom" constant="22" id="4cP-4t-gW8"/>
                                     <constraint firstItem="W3Q-L6-lfm" firstAttribute="centerY" secondItem="F0Y-am-7Qx" secondAttribute="centerY" id="71D-IU-ckx"/>
                                     <constraint firstItem="W3Q-L6-lfm" firstAttribute="centerX" secondItem="F0Y-am-7Qx" secondAttribute="centerX" id="7a0-eK-FE7"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZRa-iJ-gIw" secondAttribute="trailing" constant="8" id="DCC-cO-Qn7"/>
                                     <constraint firstItem="ZRa-iJ-gIw" firstAttribute="centerX" secondItem="F0Y-am-7Qx" secondAttribute="centerX" id="JBl-tV-twK"/>
+                                    <constraint firstItem="ZRa-iJ-gIw" firstAttribute="leading" secondItem="F0Y-am-7Qx" secondAttribute="leading" constant="8" id="JdC-rX-jPl"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="W3Q-L6-lfm" secondAttribute="trailing" constant="8" id="JdU-cH-Xmh"/>
                                     <constraint firstItem="W3Q-L6-lfm" firstAttribute="top" secondItem="ZRa-iJ-gIw" secondAttribute="bottom" constant="29" id="KpZ-d5-ePo"/>
                                     <constraint firstAttribute="width" constant="560" id="Pe0-gM-Mfy"/>
@@ -99,12 +93,14 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="Pe0-gM-Mfy"/>
                                         <exclude reference="JBl-tV-twK"/>
                                         <exclude reference="RaN-E3-Dnt"/>
                                         <exclude reference="U1L-fU-u0P"/>
                                         <exclude reference="UqI-d9-ekb"/>
                                         <exclude reference="fRt-B4-8Di"/>
                                         <exclude reference="mqs-5t-C81"/>
+                                        <exclude reference="7a0-eK-FE7"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -113,6 +109,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TYj-7t-S7s" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="65a-X5-QDm"/>
+                            <constraint firstItem="F0Y-am-7Qx" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="6cl-IJ-b08"/>
                             <constraint firstItem="tll-10-pz5" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="6lx-5K-h5S"/>
                             <constraint firstItem="tll-10-pz5" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Bt9-PM-ndf"/>
                             <constraint firstItem="F0Y-am-7Qx" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="GbN-GK-aoU"/>
@@ -121,6 +118,12 @@
                             <constraint firstItem="TYj-7t-S7s" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="TBz-sU-fMu"/>
                             <constraint firstItem="F0Y-am-7Qx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="sRs-tO-eO4"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Lfr-f6-UAT"/>
+                                <exclude reference="OIS-ZX-oE6"/>
+                            </mask>
+                        </variation>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="99y-fk-npF" appends="YES" id="itb-NP-0Te"/>
                         </connections>
